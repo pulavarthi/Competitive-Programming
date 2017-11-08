@@ -1,0 +1,39 @@
+import java.util.Scanner;
+
+public class Cf444_A_Div64 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		String str=sc.next();
+		int l=str.length();
+		char a[]=str.toCharArray();
+		int ct0=0,ct1=0,j=-1;
+		for(int i=l-1;i>=0;i--)
+		{
+			if(a[i]=='1') {
+				ct1++;
+			}
+			if(a[i]=='0') {
+				//System.out.println(i);
+				ct0++;
+			}
+			if(ct0==6) {
+				j=i;
+				j--;
+				break;
+			}
+		}
+		//System.out.println("j "+j);
+		for(;j>=0;j--) {
+			//System.out.println("j "+j);
+			if(a[j]=='1') {
+				//System.out.println("a[j] "+a[j]);
+				System.out.println("yes");
+				System.exit(0);
+			}
+		}
+		System.out.println("no");
+	}
+
+}
